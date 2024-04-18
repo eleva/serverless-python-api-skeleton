@@ -115,39 +115,6 @@ to create doc resources in ```doc``` folder:
 - ```doc/postman.json```: a prepared postman collection to consume your API
 - ```doc/index.html```: a static doc file which could be deployed to be consulted (we suggest you to deploy to S3+Cloudformation)
 
-
-## 🧪 Tests
-Sample tests are implemented using [jest](https://jestjs.io/) and [jest-openapi](https://github.com/openapi-library/OpenAPIValidators/tree/master/packages/jest-openapi)
-Tests under ```_tests_``` folder, validate request and response model against generated OpenApi V3 specification, which are defined in your ```severless.yml``` architecture file (importing ```models``` folder files).
-
-Please be sure to generate doc files before testing running
-```bash
-npm run doc
-```
-
-Then copy ```.env.dist``` to ```.env.test```, and customize your env vars.
-
-Finally, run your test with
-
-```bash
-npm run test
-```
-
-This command will run for you jest defining ```.env.test``` as dotenv file to be used as follow
-```bash
-DOTENV_CONFIG_PATH=.env.test jest --coverage
-```
-
-You'll find your test coverage under ```coverage``` folder.<br>
-
-### Autogenerate tests from serverless file
-After defining a function, you can create test for a function simply using [serverless-jest-plugin](https://github.com/nordcloud/serverless-jest-plugin)
-
-To create a new test execute this command switching ```functionName``` parameter with ones defined in your ```serverless.yml``` file
-```bash
-sls create test -f functionName
-```
-
 ## 👣 Cloud Footprint
 It is a best practice to reduce lambda package footprint (package size) and general cloud footprint (unused resources).<br>
 To reduce your lambda footprint:
