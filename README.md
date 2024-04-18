@@ -67,15 +67,6 @@ DB_USERNAME=mysql
 DB_PASSWORD=mysql
 ```
 
-To successfully run this repo please connect to your database and create ```user``` table as follow
-```sql
-CREATE TABLE `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
-```
-
 ## 🚀 Run Locally
 Start serverless offline from root directory
 
