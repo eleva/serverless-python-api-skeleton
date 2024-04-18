@@ -15,13 +15,12 @@ db = mysql.connector.connect(
 def hello(event, context):
 
     cursor = db.cursor()
-    cursor.execute("SELECT 1")
+    cursor.execute("SELECT 'Go Serverless v3.0! Your function executed successfully!'")
     result = cursor.fetchall()
 
     body = {
-        "message": "Go Serverless v3.0! Your function executed successfully!",
-        "input": event,
-        "result":result
+        "message": result[0],
+        "input": event
     }
 
     response = {"statusCode": 200, "body": json.dumps(body)}
