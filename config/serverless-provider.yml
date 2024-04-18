@@ -5,7 +5,7 @@ deploymentBucket:
   blockPublicAccess: true
 # The AWS region in which to deploy (us-east-1 is the default)
 region: ${env:AWS_REGION}
-runtime: nodejs18.x
+runtime: python3.9
 environment:
   # environment variables
   APP_ENV: ${env:APP_ENV}
@@ -24,6 +24,3 @@ vpc:
 # Enable lambda tracing with xray
 tracing:
   lambda: true
-layers:
-  - !Ref SharedLambdaLayer
-  - !Ref DependenciesLambdaLayer
