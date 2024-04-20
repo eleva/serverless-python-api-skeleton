@@ -14,15 +14,18 @@ db = mysql.connector.connect(
 
 def hello(event, context):
 
+    #Fake select just to demonstrate mysql connection is working
     cursor = db.cursor()
     cursor.execute("SELECT 'Go Serverless v3.0! Your function executed successfully!'")
     result = cursor.fetchall()
 
+    #Prepare body
     body = {
         "message": result[0][0],
         "input": event
     }
 
+    #Prepare response
     response = {"statusCode": 200, "body": json.dumps(body)}
 
     return response
