@@ -3,6 +3,7 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+      python: 3.8
     commands:
       # Update packages
       - apt update -y
@@ -10,6 +11,10 @@ phases:
       - npm install -g serverless
       # Install redocly globally
       - npm install -g @redocly/cli
+      # Install npm dependencies
+      - npm install
+      # Install py dependencies
+      - pip install -r requirements.txt
       # Configure serverless cli user
       - sls config credentials --provider aws --key $AWS_KEY --secret $AWS_SECRET
   build:

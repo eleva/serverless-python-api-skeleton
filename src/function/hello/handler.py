@@ -19,7 +19,7 @@ def hello(event, context):
     result = cursor.fetchall()
 
     body = {
-        "message": result[0],
+        "message": result[0][0],
         "input": event
     }
 

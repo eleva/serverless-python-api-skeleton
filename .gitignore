@@ -15,3 +15,6 @@
 .redocly.lint-ignore.yaml
 # Tests
 coverage
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
