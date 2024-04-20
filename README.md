@@ -106,6 +106,26 @@ to create doc resources in ```doc``` folder:
 - ```doc/postman.json```: a prepared postman collection to consume your API
 - ```doc/index.html```: a static doc file which could be deployed to be consulted (we suggest you to deploy to S3+Cloudformation)
 
+## 🧪 Tests
+Sample tests are implemented using [pyunit](https://wiki.python.org/moin/PyUnit) and [openapi-schema-validator](https://pypi.org/project/openapi-schema-validator/)
+Tests under ```tests``` folder, validate request and response model against generated OpenApi V3 specification, which are defined in your ```severless.yml``` architecture file (importing ```models``` folder files).
+
+Please be sure to generate doc files before testing running
+```bash
+npm run doc
+```
+
+Finally, run your test with
+
+```bash
+npm run test
+```
+
+This command will run for you pyunit
+```bash
+python -m unittest discover -s tests -p '*_test.py'
+```
+
 ## 👣 Cloud Footprint
 It is a best practice to reduce lambda package footprint (package size) and general cloud footprint (unused resources).<br>
 To reduce your lambda footprint:
