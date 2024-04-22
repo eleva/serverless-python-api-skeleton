@@ -5,3 +5,4 @@
 - serverless-jest-plugin #tests
 - serverless-prune-plugin #reduce old version footprint
 - serverless-jetpack #use jetpack as packager
+- serverless-python-requirements #install python requirements
