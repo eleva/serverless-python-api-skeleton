@@ -5,7 +5,7 @@ from openapi_spec_validator.readers import read_from_filename
 from openapi_schema_validator import validate as validate_schema
 from src.function.hello.handler import hello
 
-class TestStringMethods(unittest.TestCase):
+class TestHello(unittest.TestCase):
 
     def test_hello_response_against_spec(self):
 
